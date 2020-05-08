@@ -17,7 +17,9 @@ class EmgCollector(myo.DeviceListener):
     event.device.stream_emg(True)
 
   def on_emg(self, event):
-    self.emg_data = event.emg
+    self.emg_data += event.emg
 
   def get_EMG(self):
-    return self.emg_data
+    emg =  self.emg_data[:8]
+    self.emg_data = self.emg_data[8:]
+    return emg

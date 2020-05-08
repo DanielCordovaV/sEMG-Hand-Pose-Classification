@@ -102,7 +102,7 @@ if __name__ == "__main__":
         hub = Hub()
         collector = EmgCollector()
 
-        while hub.run(collector.on_event, 5):
+        while hub.run(collector.on_event, 1):
             collect_data(collector)
     else:
         print("Make sure python is version 3 and up")
